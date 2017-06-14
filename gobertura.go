@@ -127,10 +127,10 @@ func main() {
       }
       total++
     }
-
     class.LineRate = float64(covered) / float64(total)
-    covered, total = 0,0
+
     for _, method := range class.Methods {
+      covered, total := 0,0
       for _, line := range method.Lines {
         if line.Hits > 0 {
           covered++
